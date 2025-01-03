@@ -3,6 +3,7 @@ package ciasta;
 import javafx.application.Application;
 //import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 //import javafx.scene.control.TextField;
@@ -10,13 +11,11 @@ import javafx.scene.Scene;
 //import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import java.io.IOException;
+//import ciasta.Database;
 
-/**
- * JavaFX App
- */
 public class App extends Application {
 
-    private static Scene scene;
+    static Scene scene;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -24,6 +23,7 @@ public class App extends Application {
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
+        //Database.clearDatabase();
     }
 
     static void setRoot(String fxml) throws IOException {
@@ -38,5 +38,13 @@ public class App extends Application {
     public static void main(String[] args) {
         launch();
     }
+
+    public static char[] getroot() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getroot'");
+    }
+
+
+
 
 }
