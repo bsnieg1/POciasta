@@ -39,12 +39,6 @@ public class App extends Application {
         launch();
     }
 
-    public static char[] getroot() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getroot'");
-    }
-
-
 
 
 }

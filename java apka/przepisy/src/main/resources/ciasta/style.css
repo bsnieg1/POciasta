@@ -22,7 +22,3 @@ ScrollPane{
     -fx-background-position: center;
     -fx-background-size: contain; 
 }
-
-.scrollPane{
-    -fx-background-color: red;
-}
