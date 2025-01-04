@@ -42,13 +42,13 @@ public class Database {
     }
 
     // Insert a product and its amount into the 'products' table
-    public static void insertProduct(String productName, String productAmount) {
+    public static void insertProduct(String productName, int productAmount) {
         String sql = "INSERT INTO products(product_name, product_amount) VALUES(?, ?)";
 
         try (Connection conn = connect();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setString(1, productName);   // Set the product name
-            stmt.setString(2, productAmount); // Set the product amount
+            stmt.setInt(2, productAmount); // Set the product amount
             stmt.executeUpdate();              // Execute the insertion
             System.out.println("Product added: " + productName + " - " + productAmount);
         } catch (SQLException e) {

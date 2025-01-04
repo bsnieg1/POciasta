@@ -76,7 +76,7 @@ public class PrimaryController {
         productLabel.setPrefWidth(332);
         productLabel.setAlignment(Pos.CENTER);
 
-        Label amountLabel = new Label(dataProductAmount);
+        Label amountLabel = new Label(dataProductAmount + "g");
         amountLabel.setFont(new Font("Arial", 24));
         amountLabel.setPrefWidth(200);
         amountLabel.setAlignment(Pos.CENTER);
@@ -139,7 +139,7 @@ public class PrimaryController {
         if (productAmount.getText().isEmpty()){ 
             boxForProduct.getChildren().remove(newHbox); 
         }else{
-            Database.insertProduct(newProduct.getText(), productAmount.getText()+ "g");
+            Database.insertProduct(newProduct.getText(), Integer.parseInt(productAmount.getText()));
         }
         
  
