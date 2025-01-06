@@ -1,0 +1,24 @@
+AnchorPane{
+    -fx-background-color: #c0957d;
+}
+ScrollPane{
+    -fx-background-color:#c0957d;
+}
+.button{
+    -fx-background-color: #49230a; /* Zielone tło */
+    -fx-text-fill: white; /* Biały tekst */
+    -fx-background-radius: 20px; 
+}
+.button:hover {
+    -fx-background-color: #683010; /* Zielony kolor na hover */
+}
+.label{
+    -fx-border-color: #3d1d08;
+    -fx-border-width: 2px;
+}
+#dancingcat{
+    -fx-background-image: url("finallizard.gif"); /* Adjust path */
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-size: contain; 
+}
