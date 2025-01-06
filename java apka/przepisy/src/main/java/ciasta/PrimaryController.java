@@ -20,7 +20,10 @@ import javafx.scene.text.Font;
 public class PrimaryController {
     @FXML
     private VBox boxForProduct;  
+    @FXML
 
+    private VBox boxForProductPantry;
+    
     @FXML
     private TextField newProduct;  
 
@@ -39,7 +42,6 @@ public class PrimaryController {
     @FXML
     public void switchToSpizarnia() throws IOException {
         App.setRoot("spizarnia");
-        System.out.println(boxForProduct);
 
     }
     @FXML
@@ -54,11 +56,17 @@ public class PrimaryController {
         } else {
             System.out.println("VBox is not initialized yet." + boxForProduct);
         }
+         if (boxForProductPantry != null) {
+             System.out.println("VBox2 initialized correctly." + boxForProductPantry);
+             fastInit2();
+         } else {
+             System.out.println("VBox2 is not initialized yet." + boxForProductPantry);
+         }
     }
 
     private void fastInit() {
         for (int i = 0; i < Database.getAllProductsMatrix().length; i++) {
-            System.out.print(Database.getAllProductsMatrix()[i][1] + " " + Database.getAllProductsMatrix()[i][2]);
+            //System.out.print(Database.getAllProductsMatrix()[i][1] + " " + Database.getAllProductsMatrix()[i][2]);
             String productName = Database.getAllProductsMatrix()[i][1]; 
             String productAmount = Database.getAllProductsMatrix()[i][2]; 
             initializeFromDatabase(productName, productAmount); 
@@ -85,6 +93,7 @@ public class PrimaryController {
         boughtProduct.setFont(new Font("Arial", 24));
         boughtProduct.setAlignment(Pos.CENTER_RIGHT);
         boughtProduct.setOnAction(e -> {
+            Pantry.insertOrUpdateProduct(productLabel.getText(), Integer.parseInt(dataProductAmount));
             boxForProduct.getChildren().remove(productBox); 
             Database.deleteProduct(dataProductName);
         });
@@ -93,6 +102,7 @@ public class PrimaryController {
         deleteProduct.setFont(new Font("Arial", 24));
         deleteProduct.setAlignment(Pos.CENTER_RIGHT);
         deleteProduct.setOnAction(e -> {
+            
             boxForProduct.getChildren().remove(productBox);
             Database.deleteProduct(dataProductName);
         });
@@ -105,7 +115,7 @@ public class PrimaryController {
     @FXML
     private void add() {
         Database.createTable();
-
+        Pantry.createTable();
         HBox newHbox = new HBox(8);  
         newHbox.setAlignment(Pos.CENTER);
         newHbox.setTranslateX(4);
@@ -123,8 +133,10 @@ public class PrimaryController {
         boughtProduct.setFont(new Font("Arial", 24));
         boughtProduct.setAlignment(Pos.CENTER_RIGHT);
         boughtProduct.setOnAction(e -> {
+            Pantry.insertOrUpdateProduct(newProductLabel.getText(), Integer.parseInt(productAmountLabel.getText().substring(0, productAmountLabel.getText().length()-1)));
             boxForProduct.getChildren().remove(newHbox);  // zmienic pozniej zeby dodawac do drugiej bazy danych
             Database.deleteProduct(newProductLabel.getText());
+           
         });
         Button deleteProduct = new Button("X");
         deleteProduct.setFont(new Font("Arial", 24));
@@ -139,7 +151,7 @@ public class PrimaryController {
         if (productAmount.getText().isEmpty()){ 
             boxForProduct.getChildren().remove(newHbox); 
         }else{
-            Database.insertProduct(newProduct.getText(), Integer.parseInt(productAmount.getText()));
+            Database.insertProduct(newProduct.getText(), productAmount.getText());
         }
         
  
@@ -159,4 +171,38 @@ public class PrimaryController {
         newProduct.clear();
         productAmount.clear();
     }
+
+    @FXML
+    private void fastInit2() {
+        for (int i = 0; i < Pantry.getAllProductsMatrix2().length; i++) {
+            System.out.print(Pantry.getAllProductsMatrix2()[i][1] + " " + Pantry.getAllProductsMatrix2()[i][2]);
+            String productNamePandry = Pantry.getAllProductsMatrix2()[i][1]; 
+            String productAmountPandry = Pantry.getAllProductsMatrix2()[i][2]; 
+            initializeFromDatabase2(productNamePandry, productAmountPandry); 
+        }
+    }
+    @FXML
+    private void initializeFromDatabase2(String dataProductName, String dataProductAmount) {
+        
+        HBox productBoxPandry = new HBox(8);  
+        productBoxPandry.setAlignment(Pos.CENTER_LEFT); 
+        productBoxPandry.setTranslateX(8); 
+        
+
+        Label productLabelPandry = new Label(dataProductName);
+        productLabelPandry.setFont(new Font("Arial", 24)); 
+        productLabelPandry.setPrefWidth(332);
+        productLabelPandry.setAlignment(Pos.CENTER);
+
+        Label amountLabel = new Label(dataProductAmount + "g");
+        amountLabel.setFont(new Font("Arial", 24));
+        amountLabel.setPrefWidth(200);
+        amountLabel.setAlignment(Pos.CENTER);
+        
+    
+        productBoxPandry.getChildren().addAll(productLabelPandry, amountLabel);
+    
+        boxForProductPantry.getChildren().add(productBoxPandry);
+    }
+    
 }

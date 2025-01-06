@@ -16,9 +16,3 @@ ScrollPane{
     -fx-border-color: #3d1d08;
     -fx-border-width: 2px;
 }
-#dancingcat{
-    -fx-background-image: url("finallizard.gif"); /* Adjust path */
-    -fx-background-repeat: no-repeat;
-    -fx-background-position: center;
-    -fx-background-size: contain; 
-}

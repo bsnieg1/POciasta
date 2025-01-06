@@ -3,7 +3,6 @@ package ciasta;
 import javafx.application.Application;
 //import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 //import javafx.scene.control.TextField;
@@ -24,6 +23,7 @@ public class App extends Application {
         stage.setScene(scene);
         stage.show();
         //Database.clearDatabase();
+        //Pantry.clearDatabase2();
     }
 
     static void setRoot(String fxml) throws IOException {
