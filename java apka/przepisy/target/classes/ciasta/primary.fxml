@@ -30,7 +30,7 @@
                   <Font size="40.0" />
                </font>
                <graphic>
-                  <Button alignment="TOP_LEFT" mnemonicParsing="false" text="Przejdź do przepisu" />
+                  <Button alignment="TOP_LEFT" mnemonicParsing="false" text="Przejdź do przepisu" onAction="#switchToRecipe" userData="0"/>
                </graphic>
             </Label>
             <Label contentDisplay="RIGHT" prefHeight="100.0" prefWidth="672.0" text=" Makowiec                             ">
@@ -38,7 +38,7 @@
                   <Font size="40.0" />
                </font>
                <graphic>
-                  <Button alignment="TOP_LEFT" mnemonicParsing="false" text="Przejdź do przepisu" />
+                  <Button alignment="TOP_LEFT" mnemonicParsing="false" text="Przejdź do przepisu" onAction="#switchToRecipe" userData="1"/>
                </graphic>
             </Label>
             <Label contentDisplay="RIGHT" prefHeight="100.0" prefWidth="672.0" text=" Mefedron                             ">
@@ -46,7 +46,7 @@
                   <Font size="40.0" />
                </font>
                <graphic>
-                  <Button alignment="TOP_LEFT" mnemonicParsing="false" text="Przejdź do przepisu" />
+                  <Button alignment="TOP_LEFT" mnemonicParsing="false" text="Przejdź do przepisu" onAction="#switchToRecipe" userData="2"/>
                </graphic>
             </Label>
             <Label contentDisplay="RIGHT" prefHeight="100.0" prefWidth="672.0" text=" Szarlotka                              ">
@@ -54,7 +54,7 @@
                   <Font size="40.0" />
                </font>
                <graphic>
-                  <Button alignment="TOP_LEFT" mnemonicParsing="false" text="Przejdź do przepisu" />
+                  <Button alignment="TOP_LEFT" mnemonicParsing="false" text="Przejdź do przepisu" onAction="#switchToRecipe" userData="3"/>
                </graphic>
             </Label>
             <Label contentDisplay="RIGHT" prefHeight="100.0" prefWidth="672.0" text=" Piernik                                  ">
@@ -62,7 +62,7 @@
                   <Font size="40.0" />
                </font>
                <graphic>
-                  <Button alignment="TOP_LEFT" mnemonicParsing="false" text="Przejdź do przepisu" />
+                  <Button alignment="TOP_LEFT" mnemonicParsing="false" text="Przejdź do przepisu" onAction="#switchToRecipe" userData="4"/>
                </graphic>
             </Label>
             <Label contentDisplay="RIGHT" prefHeight="100.0" prefWidth="672.0" text=" Beza                                     ">
@@ -70,7 +70,7 @@
                   <Font size="40.0" />
                </font>
                <graphic>
-                  <Button alignment="TOP_LEFT" mnemonicParsing="false" text="Przejdź do przepisu" />
+                  <Button alignment="TOP_LEFT" mnemonicParsing="false" text="Przejdź do przepisu" onAction="#switchToRecipe" userData="5"/>
                </graphic>
             </Label>
          </children>

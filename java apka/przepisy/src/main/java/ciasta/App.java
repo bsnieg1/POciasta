@@ -15,15 +15,24 @@ import java.io.IOException;
 public class App extends Application {
 
     static Scene scene;
+    private static RecipeObject pickedRecipe;
 
+    public static void setPickedRecipe(RecipeObject recipe) {
+        pickedRecipe = recipe;
+    }
+    public static RecipeObject getPickedRecipe() {
+        return pickedRecipe;
+    }
     @Override
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("primary"), 700, 800);
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
+        
         //Database.clearDatabase();
         //Pantry.clearDatabase2();
+
     }
 
     static void setRoot(String fxml) throws IOException {

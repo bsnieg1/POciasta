@@ -16,3 +16,11 @@ ScrollPane{
     -fx-border-color: #3d1d08;
     -fx-border-width: 2px;
 }
+
+#requirment{
+    -fx-border-width: 2px;
+    -fx-border-color: #3d1d08;
+}
+.special-label{
+    -fx-border-width: 0px;
+}
