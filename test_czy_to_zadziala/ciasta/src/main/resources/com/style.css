@@ -1,28 +1,33 @@
-/* Background colors */
 AnchorPane {
     -fx-background-color: #c0957d;
 }
-ScrollPane {
+.scroll-pane .viewport{
     -fx-background-color: #c0957d;
+
+}
+.scroll-pane {
+    -fx-background-color: #c0957d;
+    -fx-border-width: 2px;
+    -fx-border-color: #3d1d08;
 }
 
-/* Button styles */
+
 .button {
-    -fx-background-color: #49230a; /* Zielone tło */
-    -fx-text-fill: white; /* Biały tekst */
+    -fx-background-color: #49230a; 
+    -fx-text-fill: white; 
     -fx-background-radius: 20px;
 }
 .button:hover {
-    -fx-background-color: #683010; /* Zielony kolor na hover */
+    -fx-background-color: #683010; 
 }
 
-/* Label styles */
+
 .label {
     -fx-border-color: #3d1d08;
     -fx-border-width: 2px;
 }
 
-/* Special styles */
+
 #requirment {
     -fx-border-width: 2px;
     -fx-border-color: #3d1d08;

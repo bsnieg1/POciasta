@@ -28,7 +28,7 @@
       </Button>
       
       <!-- ScrollPane for the list of products -->
-      <ScrollPane layoutX="5.0" layoutY="120.0" prefHeight="670.0" prefWidth="690">
+      <ScrollPane layoutX="10.0" layoutY="122.0" prefHeight="670.0" prefWidth="680">
          <content>
             <VBox spacing="10" alignment="CENTER">
                <Pane prefHeight="63.0" prefWidth="668.0">

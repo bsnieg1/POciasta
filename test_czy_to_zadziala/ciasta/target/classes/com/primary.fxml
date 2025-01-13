@@ -27,11 +27,11 @@
       </Button>
       
       <!-- Recipe List -->
-      <VBox layoutX="14.0" layoutY="122.0" prefHeight="677.0" prefWidth="672.0">
+      <VBox layoutX="10.0" layoutY="122.0" prefHeight="677.0" prefWidth="688.0">
          <children>
-            <Pane prefHeight="100.0" prefWidth="672.0">
+            <Pane prefHeight="100.0" prefWidth="680.0">
                <children>
-                  <Label contentDisplay="RIGHT" prefHeight="100.0" prefWidth="672.0" text=" Brownie">
+                  <Label contentDisplay="RIGHT" prefHeight="100.0" prefWidth="680.0" text=" Brownie">
                      <font>
                         <Font size="40.0" />
                      </font>
@@ -41,7 +41,7 @@
             </Pane>
             <Pane prefHeight="100.0" prefWidth="672.0">
                <children>
-                  <Label contentDisplay="RIGHT" prefHeight="100.0" prefWidth="672.0" text=" Szarlotka">
+                  <Label contentDisplay="RIGHT" prefHeight="100.0" prefWidth="680.0" text=" Szarlotka">
                      <font>
                         <Font size="40.0" />
                      </font>
@@ -52,7 +52,7 @@
             <Pane prefHeight="100.0" prefWidth="672.0">
                <children>
                   <!-- Recipe Labels -->
-                  <Label contentDisplay="RIGHT" prefHeight="100.0" prefWidth="672.0" text=" Ciasto marchewkowe">
+                  <Label contentDisplay="RIGHT" prefHeight="100.0" prefWidth="680.0" text=" Ciasto marchewkowe">
                      <font>
                         <Font size="40.0" />
                      </font>
@@ -62,7 +62,7 @@
             </Pane>
             <Pane prefHeight="100.0" prefWidth="672.0">
                <children>
-                  <Label contentDisplay="RIGHT" prefHeight="100.0" prefWidth="672.0" text=" Sernik">
+                  <Label contentDisplay="RIGHT" prefHeight="100.0" prefWidth="680.0" text=" Sernik">
                      <font>
                         <Font size="40.0" />
                      </font>
@@ -72,7 +72,7 @@
             </Pane>
             <Pane prefHeight="100.0" prefWidth="672.0">
                <children>
-                  <Label contentDisplay="RIGHT" prefHeight="100.0" prefWidth="672.0" text=" Makowiec">
+                  <Label contentDisplay="RIGHT" prefHeight="100.0" prefWidth="680.0" text=" Makowiec">
                      <font>
                         <Font size="40.0" />
                      </font>
@@ -82,7 +82,7 @@
             </Pane>
             <Pane prefHeight="100.0" prefWidth="672.0">
                <children>
-                  <Label contentDisplay="RIGHT" prefHeight="100.0" prefWidth="672.0" text=" Tiramisu">
+                  <Label contentDisplay="RIGHT" prefHeight="100.0" prefWidth="680.0" text=" Tiramisu">
                      <font>
                         <Font size="40.0" />
                      </font>
