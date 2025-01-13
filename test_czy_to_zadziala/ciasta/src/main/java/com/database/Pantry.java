@@ -12,7 +12,7 @@ import java.util.List;
 public class Pantry {
 
     // Path to the second SQLite database file
-    private static final String URL = "jdbc:sqlite:src/main/resources/com/Pantry.db";
+    private static final String URL = "jdbc:sqlite:c:/Users/Bartek/Desktop/test_czy_to_zadziala/ciasta/src/main/resources/com/Pantry.db";
 
     // Connect to the SQLite database
     public static Connection connect() {

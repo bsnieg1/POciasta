@@ -12,7 +12,8 @@ import java.util.List;
 public class Database {
 
     // Path to the SQLite database file
-    private static final String URL = "jdbc:sqlite:src/main/resources/com/MyDatabase.db"; // Change the path to your database file
+    
+    private static final String URL = "jdbc:sqlite:c:/Users/Bartek/Desktop/test_czy_to_zadziala/ciasta/src/main/resources/com/MyDatabase.db"; // Change the path to your database file
 
     // Connect to the SQLite database
     public static Connection connect() {
