@@ -13,12 +13,10 @@ public class Pantry {
 
     private static final String URL = "jdbc:sqlite:C:\\Users\\barto\\OneDrive\\Pulpit\\test_czy_to_zadziala\\ciasta\\src\\main\\resources\\com\\Pantry.db";
 
-   
     public static Connection connect() {
         Connection conn = null;
         try {
             conn = DriverManager.getConnection(URL);
-            System.out.println("Connection to second SQLite database has been established.");
         } catch (SQLException e) {
             System.out.println("Connection to second database failed: " + e.getMessage());
         }
@@ -40,7 +38,6 @@ public class Pantry {
         }
     }
 
-   
     public static void insertOrUpdateProduct(String productName, int productAmount) {
         String selectSql = "SELECT product_amount FROM products WHERE product_name = ?";
         String updateSql = "UPDATE products SET product_amount = product_amount + ? WHERE product_name = ?";
@@ -53,7 +50,6 @@ public class Pantry {
             ResultSet rs = selectStmt.executeQuery();
 
             if (rs.next()) {
-      
                 try (PreparedStatement updateStmt = conn.prepareStatement(updateSql)) {
                     updateStmt.setInt(1, productAmount);
                     updateStmt.setString(2, productName);
@@ -61,7 +57,6 @@ public class Pantry {
                     System.out.println("Product updated in the second database: " + productName + " - new amount added: " + productAmount);
                 }
             } else {
-                
                 try (PreparedStatement insertStmt = conn.prepareStatement(insertSql)) {
                     insertStmt.setString(1, productName);
                     insertStmt.setInt(2, productAmount);
@@ -75,7 +70,6 @@ public class Pantry {
         }
     }
 
-   
     public static ResultSet getProducts() {
         String sql = "SELECT * FROM products";
         
@@ -89,7 +83,6 @@ public class Pantry {
         }
     }
 
-    
     public static void deleteProduct(String productName) {
         String sql = "DELETE FROM products WHERE product_name = ?";
 
@@ -103,7 +96,6 @@ public class Pantry {
         }
     }
 
- 
     public static void clearDatabase2() {
         String sql = "DELETE FROM products";
     
@@ -116,7 +108,6 @@ public class Pantry {
         }
     }
 
-   
     public static String[][] getAllProductsMatrix2() {
         String sql = "SELECT * FROM products";
 
@@ -126,7 +117,6 @@ public class Pantry {
              PreparedStatement stmt = conn.prepareStatement(sql);
              ResultSet rs = stmt.executeQuery()) {
 
-
             while (rs.next()) {
                 int id = rs.getInt("id");
                 String productName = rs.getString("product_name");
@@ -134,7 +124,6 @@ public class Pantry {
 
                 String[] productRow = {String.valueOf(id), productName, productAmount};
                 
-       
                 productList.add(productRow);
             }
         } catch (SQLException e) {
@@ -147,5 +136,46 @@ public class Pantry {
         }
 
         return productMatrix;
+    }
+
+    public static void subtractProductAmount(String productName, int amountToSubtract) {
+        String selectSql = "SELECT product_amount FROM products WHERE product_name = ?";
+        String updateSql = "UPDATE products SET product_amount = ? WHERE product_name = ?";
+        String deleteSql = "DELETE FROM products WHERE product_name = ?";
+
+        try (Connection conn = connect();
+             PreparedStatement selectStmt = conn.prepareStatement(selectSql)) {
+
+            selectStmt.setString(1, productName);
+            ResultSet rs = selectStmt.executeQuery();
+
+            if (rs.next()) {
+                int currentAmount = rs.getInt("product_amount");
+                int newAmount = currentAmount - amountToSubtract;
+
+                if (newAmount < 0) {
+                    System.out.println("Error: Cannot subtract more than the current amount.");
+                    return;
+                } else if (newAmount == 0) {
+                    try (PreparedStatement deleteStmt = conn.prepareStatement(deleteSql)) {
+                        deleteStmt.setString(1, productName);
+                        deleteStmt.executeUpdate();
+                        System.out.println("Product deleted from the second database: " + productName);
+                    }
+                } else {
+                    try (PreparedStatement updateStmt = conn.prepareStatement(updateSql)) {
+                        updateStmt.setInt(1, newAmount);
+                        updateStmt.setString(2, productName);
+                        updateStmt.executeUpdate();
+                        System.out.println("Product amount updated in the second database: " + productName + " - new amount: " + newAmount);
+                    }
+                }
+            } else {
+                System.out.println("Error: Product not found in the second database.");
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error while subtracting the product amount in the second database: " + e.getMessage());
+        }
     }
 }

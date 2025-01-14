@@ -83,43 +83,32 @@ public class PrimaryController {
 
     @FXML
     public void switchToSpizarnia() throws IOException {
-        System.out.println("xd");
         App.setRoot("spizarnia");
     }
 
 
     @FXML
     public void switchToSecondary() throws IOException {
-        System.out.println("xd");
         App.setRoot("secondary");
     }
 
     @FXML
     public void switchToRecipe() throws IOException {
-        System.out.println("xd");
         App.setRoot("recipe");
     }
 
     @FXML
     public void initialize() {
         if (boxForProduct != null) {
-            System.out.println("VBox initialized correctly." + boxForProduct);
             fastInit();
         } else {
-            System.out.println("VBox is not initialized yet." + boxForProduct);
         }
         if (boxForProductPantry != null) {
-            System.out.println("VBox2 initialized correctly." + boxForProductPantry);
             fastInit2();
-        } else {
-            System.out.println("VBox2 is not initialized yet." + boxForProductPantry);
         }
         if (firstIngredient != null) {
             pickedRecipe = App.getPickedRecipe();
-            System.out.println("Recipe initialized correctly." + firstIngredient);
             initializeRecipe();
-        } else {
-            System.out.println("xddd is not initialized yet." + firstIngredient);
         }
     }
 
@@ -147,7 +136,8 @@ public class PrimaryController {
         difficulty.setText(pickedRecipe.getDiff());
         if(RecipeObject.checkPantryforRecipe(pickedRecipe.getIngredients())) {
             makeCake.setText("Wykonaj ciasto");
-            makeCake.setDisable(false);
+            makeCake.setDisable(false);     
+
 
         } else {
             makeCake.setText("Nie masz wystarczających składników");
@@ -156,7 +146,11 @@ public class PrimaryController {
     }
     @FXML
     private void makeCake(){
-        System.out.println("ciasto zrobione B)");
+        for(String ingredient : pickedRecipe.getIngredients()){
+            String removeIngredient = ingredient.substring(0, ingredient.lastIndexOf(" "));
+            int removeValue = Integer.parseInt(ingredient.substring(ingredient.lastIndexOf(" ")+1,ingredient.length()-1));
+            Pantry.subtractProductAmount(removeIngredient, removeValue);
+        }
     }
     private void fastInit() {
         for (int i = 0; i < Database.getAllProductsMatrix().length; i++) {
