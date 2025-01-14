@@ -27,12 +27,12 @@ public class PrimaryController {
 
 
     public PrimaryController() {
-        recipes[0] = new RecipeObject("Ciasto marchewkowe", "marchewki 100g, mąka 100g, cukier 50g, jajka 100g, olej 10g, proszek do pieczenia 5g, cynamon 5g, sól 5g", " 1. Wymieszaj suche składniki: mąkę, cukier, proszek do pieczenia, cynamon i sól.\n 2. Dodaj mokre składniki: jajka i olej.\n 3. Dodaj starte marchewki i dokładnie wymieszaj.\n 4. Przełóż ciasto do formy.\n 5. Wstaw do piekarnika na 180 stopni na 45 minut.\n 6. Po upieczeniu, ostudź przed podaniem.", 60, 12, "łatwy");
-        recipes[1] = new RecipeObject("Sernik", "ser 500g, cukier 200g, jajka 100g, masło 100g, mąka 50g, proszek do pieczenia 5g, wanilia 5g, sól 5g", " 1. Wymieszaj ser z cukrem i wanilią.\n 2. Dodaj jajka i roztopione masło, dokładnie wymieszaj.\n 3. Dodaj mąkę, proszek do pieczenia i sól, wymieszaj do uzyskania jednolitej masy.\n 4. Przełóż masę serową do formy.\n 5. Wstaw do piekarnika na 180 stopni na 60 minut.\n 6. Po upieczeniu, ostudź przed podaniem.", 90, 8, "średni");
-        recipes[2] = new RecipeObject("Szarlotka", "jabłka 500g, mąka 300g, cukier 200g, masło 200g, jajka 100g, proszek do pieczenia 5g, cynamon 5g, sól 5g", " 1. Wymieszaj mąkę z proszkiem do pieczenia, cynamonem i solą.\n 2. Dodaj masło i jajka, wymieszaj do uzyskania jednolitej masy.\n 3. Dodaj pokrojone jabłka i dokładnie wymieszaj.\n 4. Przełóż ciasto do formy.\n 5. Wstaw do piekarnika na 180 stopni na 50 minut.\n 6. Po upieczeniu, ostudź przed podaniem.", 70, 10, "średni");
-        recipes[3] = new RecipeObject("Makowiec", "mak 200g, mąka 300g, cukier 150g, jajka 100g, masło 100g, proszek do pieczenia 5g, mleko 100g, sól 5g", " 1. Wymieszaj mąkę z proszkiem do pieczenia i solą.\n 2. Dodaj roztopione masło, jajka i mleko, dokładnie wymieszaj.\n 3. Dodaj mak i cukier, wymieszaj do uzyskania jednolitej masy.\n 4. Przełóż ciasto do formy.\n 5. Wstaw do piekarnika na 180 stopni na 60 minut.\n 6. Po upieczeniu, ostudź przed podaniem.", 90, 10, "łatwy");
-        recipes[4] = new RecipeObject("Brownie", "czekolada 200g, masło 100g, cukier 150g, jajka 100g, mąka 50g, proszek do pieczenia 5g, sól 5g, orzechy 50g", " 1. Roztop czekoladę z masłem.\n 2. Dodaj cukier i jajka, dokładnie wymieszaj.\n 3. Dodaj mąkę, proszek do pieczenia i sól, wymieszaj do uzyskania jednolitej masy.\n 4. Dodaj posiekane orzechy i delikatnie wymieszaj.\n 5. Przełóż ciasto do formy.\n 6. Wstaw do piekarnika na 180 stopni na 30 minut.\n 7. Po upieczeniu, ostudź przed podaniem.", 50, 8, "trudny");
-        recipes[5] = new RecipeObject("Tiramisu", "serek mascarpone 500g, cukier 100g, jajka 100g, kawa 200g, biszkopty 200g, kakao 10g, likier 50g, sól 5g", " 1. Ubij jajka z cukrem na puszystą masę.\n 2. Dodaj serek mascarpone i delikatnie wymieszaj.\n 3. Namocz biszkopty w kawie i likierze.\n 4. Układaj warstwami biszkopty i krem mascarpone.\n 5. Posyp wierzch kakao.\n 6. Wstaw do lodówki na 4 godziny przed podaniem.", 300, 6, "trudny");
+        recipes[0] = new RecipeObject("Ciasto marchewkowe", "marchew 100g,mąka 100g,cukier 50g,jajka 100g,olej 10g,proszek do pieczenia 5g,cynamon 5g,sól 5g", " 1. Wymieszaj suche składniki: mąkę, cukier, proszek do pieczenia, cynamon i sól.\n 2. Dodaj mokre składniki: jajka i olej.\n 3. Dodaj starte marchewki i dokładnie wymieszaj.\n 4. Przełóż ciasto do formy.\n 5. Wstaw do piekarnika na 180 stopni na 45 minut.\n 6. Po upieczeniu, ostudź przed podaniem.", 60, 12, "łatwy");
+        recipes[1] = new RecipeObject("Sernik", "ser 500g,cukier 200g,jajka 100g,masło 100g,mąka 50g,proszek do pieczenia 5g,wanilia 5g,sól 5g", " 1. Wymieszaj ser z cukrem i wanilią.\n 2. Dodaj jajka i roztopione masło, dokładnie wymieszaj.\n 3. Dodaj mąkę, proszek do pieczenia i sól, wymieszaj do uzyskania jednolitej masy.\n 4. Przełóż masę serową do formy.\n 5. Wstaw do piekarnika na 180 stopni na 60 minut.\n 6. Po upieczeniu, ostudź przed podaniem.", 90, 8, "średni");
+        recipes[2] = new RecipeObject("Szarlotka", "jabłka 500g,mąka 300g,cukier 200g,masło 200g,jajka 100g,proszek do pieczenia 5g,cynamon 5g,sól 5g", " 1. Wymieszaj mąkę z proszkiem do pieczenia, cynamonem i solą.\n 2. Dodaj masło i jajka, wymieszaj do uzyskania jednolitej masy.\n 3. Dodaj pokrojone jabłka i dokładnie wymieszaj.\n 4. Przełóż ciasto do formy.\n 5. Wstaw do piekarnika na 180 stopni na 50 minut.\n 6. Po upieczeniu, ostudź przed podaniem.", 70, 10, "średni");
+        recipes[3] = new RecipeObject("Makowiec", "mak 200g,mąka 300g,cukier 150g,jajka 100g,masło 100g,proszek do pieczenia 5g,mleko 100g,sól 5g", " 1. Wymieszaj mąkę z proszkiem do pieczenia i solą.\n 2. Dodaj roztopione masło, jajka i mleko, dokładnie wymieszaj.\n 3. Dodaj mak i cukier, wymieszaj do uzyskania jednolitej masy.\n 4. Przełóż ciasto do formy.\n 5. Wstaw do piekarnika na 180 stopni na 60 minut.\n 6. Po upieczeniu, ostudź przed podaniem.", 90, 10, "łatwy");
+        recipes[4] = new RecipeObject("Brownie", "czekolada 200g,masło 100g,cukier 150g,jajka 100g,mąka 50g,proszek do pieczenia 5g,sól 5g,orzechy 50g", " 1. Roztop czekoladę z masłem.\n 2. Dodaj cukier i jajka, dokładnie wymieszaj.\n 3. Dodaj mąkę, proszek do pieczenia i sól, wymieszaj do uzyskania jednolitej masy.\n 4. Dodaj posiekane orzechy i delikatnie wymieszaj.\n 5. Przełóż ciasto do formy.\n 6. Wstaw do piekarnika na 180 stopni na 30 minut.\n 7. Po upieczeniu, ostudź przed podaniem.", 50, 8, "trudny");
+        recipes[5] = new RecipeObject("Tiramisu", "serek mascarpone 500g,cukier 100g,jajka 100g,kawa 200g,biszkopty 200g,kakao 10g,likier 50g,sól 5g", " 1. Ubij jajka z cukrem na puszystą masę.\n 2. Dodaj serek mascarpone i delikatnie wymieszaj.\n 3. Namocz biszkopty w kawie i likierze.\n 4. Układaj warstwami biszkopty i krem mascarpone.\n 5. Posyp wierzch kakao.\n 6. Wstaw do lodówki na 4 godziny przed podaniem.", 300, 6, "trudny");
     }
 
     @FXML
@@ -73,7 +73,8 @@ public class PrimaryController {
     private Label difficulty;
     @FXML
     private VBox recipeListBox;
-
+    @FXML
+    private Button makeCake;
     @FXML
     public void switchToPrimary() throws IOException {
         App.setRoot("primary");
@@ -144,8 +145,19 @@ public class PrimaryController {
         actualRecipe.setText(pickedRecipe.getInstructions());
         portions.setText(Integer.toString(pickedRecipe.getServings()));
         difficulty.setText(pickedRecipe.getDiff());
-    }
+        if(RecipeObject.checkPantryforRecipe(pickedRecipe.getIngredients())) {
+            makeCake.setText("Wykonaj ciasto");
+            makeCake.setDisable(false);
 
+        } else {
+            makeCake.setText("Nie masz wystarczających składników");
+            makeCake.setDisable(true);
+        }
+    }
+    @FXML
+    private void makeCake(){
+        System.out.println("ciasto zrobione B)");
+    }
     private void fastInit() {
         for (int i = 0; i < Database.getAllProductsMatrix().length; i++) {
             String productName = Database.getAllProductsMatrix()[i][1];
@@ -289,4 +301,5 @@ public class PrimaryController {
             recipeListBox.getChildren().add(recipeButton);
         }
     }
+    
 }

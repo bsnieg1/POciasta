@@ -71,6 +71,7 @@
                   <Label fx:id="portions" alignment="CENTER" layoutX="50.0" layoutY="24.0" prefHeight="17.0" prefWidth="51.0" styleClass="special-label" text="Portions" />
                </children>
             </Pane>
+            <Button fx:id="makeCake" layoutX="226.0" layoutY="554.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="220.0" text="Button" onAction="#makeCake"/>
          </children>
       </Pane>
       

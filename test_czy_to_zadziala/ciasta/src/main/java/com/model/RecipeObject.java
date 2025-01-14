@@ -1,5 +1,9 @@
 package com.model;
 
+import java.util.HashMap;
+
+import com.database.Pantry;
+
 public class RecipeObject {
     private String name;
     private String ingredients;
@@ -78,5 +82,35 @@ public class RecipeObject {
 
     public void setDiff(String difficulty) {
         this.difficulty = difficulty;
+    }
+
+
+
+    public static boolean checkPantryforRecipe(String[] ingredients) {
+        HashMap<String, Integer> productsHash = new HashMap<String, Integer>();
+        String helpingString;
+        int count = 0;
+        for(int i = 0; i < Pantry.getAllProductsMatrix2().length; i++) {    
+            productsHash.put(Pantry.getAllProductsMatrix2()[i][1], Integer.valueOf(Pantry.getAllProductsMatrix2()[i][2].replaceAll("\\s.*", "")));
+        }
+        for(int j = 0; j < ingredients.length; j++) {
+            helpingString = ingredients[j].replaceAll("\\D*$", "").substring(0, ingredients[j].lastIndexOf(" "));
+            if (productsHash.containsKey(helpingString)) {
+                String pantryItem = ingredients[j].substring(0, ingredients[j].lastIndexOf(" "));
+                int ingredientAmount = Integer.parseInt(ingredients[j].replaceFirst("^[^\\d]*", "").replaceAll("\\D*$", ""));
+                
+                if (ingredientAmount <= productsHash.get(pantryItem)) {
+                    count+=1;
+                 }
+            }
+        }
+
+        productsHash.clear();
+        if (count == ingredients.length) {
+            return true;
+        } else {
+            return false;
+        }
+        
     }
 }
