@@ -23,46 +23,52 @@
             <Font size="24.0" />
          </font>
       </Button>
-      <Pane layoutX="14.0" layoutY="122.0" prefHeight="632.0" prefWidth="672.0" fx:id="requirment">
+      <Pane fx:id="requirment" layoutX="14.0" layoutY="122.0" prefHeight="632.0" prefWidth="672.0">
          <children>
-            <Label fx:id="whatRecipe" alignment="CENTER" layoutX="201.0" layoutY="14.0" prefHeight="64.0" prefWidth="271.0" text="Ciasto" styleClass="special-label">
+            <Label fx:id="whatRecipe" alignment="CENTER" layoutX="201.0" layoutY="14.0" prefHeight="64.0" prefWidth="271.0" styleClass="special-label" text="Ciasto">
                <font>
                   <Font size="35.0" />
                </font>
             </Label>
-            <Pane layoutX="237.0" layoutY="76.0" prefHeight="125.0" prefWidth="200.0" fx:id="requirment">
-               <children>
-                  <Label fx:id="time" alignment="CENTER" layoutX="65.0" layoutY="29.0" prefHeight="17.0" prefWidth="60.0" text="Time" styleClass="special-label"/>
-                  <Label layoutX="49.0" layoutY="6.0" prefHeight="17.0" prefWidth="92.0" text="Czas wykonania:" styleClass="special-label"/>
-               </children>
-            </Pane>
-            <Pane layoutX="480.0" layoutY="76.0" prefHeight="125.0" prefWidth="157.0" fx:id="requirment">
-               <children>
-                  <Label layoutX="33.0" layoutY="6.0" text="Poziom trudności" styleClass="special-label"/>
-                  <Label alignment="CENTER" layoutX="54.0" layoutY="31.0" prefHeight="17.0" prefWidth="51.0" text="Label" styleClass="special-label"/>
-               </children>
-            </Pane>
-            <Label fx:id="actualRecipe" alignment="TOP_LEFT" layoutX="9.0" layoutY="268.0" prefHeight="361.0" prefWidth="655.0" text="Bardzo długi tekst, który powinien być zawijany i zaczynać się od lewego górnego rogu.Bardzo długi tekst, który powinien być zawijany i zaczynać się od lewego górnego rogu." wrapText="true" styleClass="special-label" />
-            <Label alignment="CENTER" layoutX="233.0" layoutY="205.0" prefHeight="47.0" prefWidth="200.0" text="Przepis:" textAlignment="CENTER" styleClass="special-label">
+            <Label fx:id="actualRecipe" alignment="TOP_LEFT" layoutX="55.0" layoutY="318.0" prefHeight="311.0" prefWidth="570.0" styleClass="special-label" text="Bardzo długi tekst, który powinien być zawijany i zaczynać się od lewego górnego rogu.Bardzo długi tekst, który powinien być zawijany i zaczynać się od lewego górnego rogu." wrapText="true" />
+            <Label alignment="CENTER" layoutX="236.0" layoutY="269.0" prefHeight="47.0" prefWidth="200.0" styleClass="special-label" text="Przepis:" textAlignment="CENTER">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Pane layoutX="44.0" layoutY="76.0" prefHeight="125.0" prefWidth="157.0" fx:id="requirment">
+            <Pane fx:id="requirment" layoutX="56.0" layoutY="78.0" prefHeight="100.0" prefWidth="570.0">
                <children>
-                  <Label  layoutX="18.0" layoutY="-1.0" prefHeight="31.0" prefWidth="115.0" text="Potrzebne Składniki:" styleClass="special-label"/>
-                  <Label  fx:id="firstIngredient" layoutX="14.0" layoutY="23.0" prefHeight="31.0" prefWidth="81.0" text="1" styleClass="special-label"/>
-                  <Label  fx:id="secondIngredient" layoutX="82.0" layoutY="23.0" prefHeight="31.0" prefWidth="81.0" text="2" styleClass="special-label"/>                 
-                  <Label  fx:id="thirdIngredient" layoutX="14.0" layoutY="46.0" prefHeight="31.0" prefWidth="81.0" text="3" styleClass="special-label"/>
-                  <Label  fx:id="fourthIngredient" layoutX="82.0" layoutY="46.0" prefHeight="31.0" prefWidth="81.0" text="4" styleClass="special-label"/>
-                  <Label  fx:id="fifthIngredient" layoutX="14.0" layoutY="70.0" prefHeight="31.0" prefWidth="81.0" text="5" styleClass="special-label"/>
-                  <Label  fx:id="sixthIngredient" layoutX="82.0" layoutY="69.0" prefHeight="31.0" prefWidth="81.0" text="6" styleClass="special-label"/>
-                  <Label  fx:id="seventhIngredient" layoutX="14.0" layoutY="93.0" prefHeight="31.0" prefWidth="81.0" text="7" styleClass="special-label"/>
-                  <Label  fx:id="eighthIngredient" layoutX="82.0" layoutY="93.0" prefHeight="31.0" prefWidth="81.0" text="8" styleClass="special-label"/>
+                  <Label alignment="CENTER" layoutX="171.0" layoutY="-1.0" prefHeight="31.0" prefWidth="220.0" styleClass="special-label" text="Potrzebne Składniki:" />
+                  <Label fx:id="firstIngredient" layoutX="10.0" layoutY="31.0" prefHeight="31.0" prefWidth="140.0" styleClass="special-label" text="1" />
+                  <Label fx:id="secondIngredient" layoutX="150.0" layoutY="26.0" prefHeight="41.0" prefWidth="140.0" styleClass="special-label" text="2" />                 
+                  <Label fx:id="thirdIngredient" layoutX="290.0" layoutY="31.0" prefHeight="31.0" prefWidth="140.0" styleClass="special-label" text="3" />
+                  <Label fx:id="fourthIngredient" layoutX="430.0" layoutY="31.0" prefHeight="31.0" prefWidth="140.0" styleClass="special-label" text="4" />
+                  <Label fx:id="fifthIngredient" layoutX="10.0" layoutY="62.0" prefHeight="31.0" prefWidth="140.0" styleClass="special-label" text="5" />
+                  <Label fx:id="sixthIngredient" layoutX="150.0" layoutY="62.0" prefHeight="31.0" prefWidth="140.0" styleClass="special-label" text="6" />
+                  <Label fx:id="seventhIngredient" layoutX="290.0" layoutY="62.0" prefHeight="31.0" prefWidth="140.0" styleClass="special-label" text="7" />
+                  <Label fx:id="eighthIngredient" layoutX="430.0" layoutY="62.0" prefHeight="31.0" prefWidth="140.0" styleClass="special-label" text="8" />
                   
 
                   
                   
+               </children>
+            </Pane>
+            <Pane fx:id="requirment" layoutX="56.0" layoutY="188.0" prefHeight="64.0" prefWidth="150.0">
+               <children>
+                  <Label fx:id="time" alignment="CENTER" layoutX="45.0" layoutY="24.0" prefHeight="17.0" prefWidth="60.0" styleClass="special-label" text="Time" />
+                  <Label alignment="CENTER" layoutX="29.0" layoutY="6.0" prefHeight="17.0" prefWidth="92.0" styleClass="special-label" text="Czas wykonania:" />
+               </children>
+            </Pane>
+            <Pane fx:id="requirment" layoutX="476.0" layoutY="188.0" prefHeight="64.0" prefWidth="150.0">
+               <children>
+                  <Label layoutX="33.0" layoutY="6.0" styleClass="special-label" text="Poziom trudności" />
+                  <Label fx:id="difficulty" alignment="CENTER" layoutX="54.0" layoutY="24.0" prefHeight="17.0" prefWidth="51.0" styleClass="special-label" text="Diff" />
+               </children>
+            </Pane>
+            <Pane fx:id="requirment" layoutX="266.0" layoutY="188.0" prefHeight="64.0" prefWidth="150.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="29.0" layoutY="6.0" prefHeight="17.0" prefWidth="92.0" styleClass="special-label" text="Liczba porcji:" />
+                  <Label fx:id="portions" alignment="CENTER" layoutX="50.0" layoutY="24.0" prefHeight="17.0" prefWidth="51.0" styleClass="special-label" text="Portions" />
                </children>
             </Pane>
          </children>

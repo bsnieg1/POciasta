@@ -4,6 +4,11 @@ import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import com.App;
+import com.database.Database;
+import com.database.Pantry;
+import com.model.RecipeObject;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
@@ -14,28 +19,22 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 
-import com.model.RecipeObject;
-import com.App;
-import com.database.Database;
-import com.database.Pantry;
-
 public class PrimaryController {
 
-    // Variables to store the selected recipe and the list of recipes
+
     private RecipeObject pickedRecipe;
     private RecipeObject[] recipes = new RecipeObject[6];
 
-    // Constructor to initialize the list of recipes
+
     public PrimaryController() {
-        recipes[0] = new RecipeObject("Ciasto marchewkowe", "marchewki 100g, mąka 100g, cukier 50g, jajka 100g, olej 10g, proszek do pieczenia 5g, cynamon 5g, sól 5g", " 1. Wymieszaj suche składniki.\n 2. Dodaj mokre składniki.\n 3. Wymieszaj.\n 4. Wstaw do piekarnika na 180 stopni na 45 minut.", 45, 12);
-        recipes[1] = new RecipeObject("Sernik", "ser 500g, cukier 200g, jajka 100g, masło 100g, mąka 50g, proszek do pieczenia 5g, wanilia 5g, sól 5g", " 1. Wymieszaj ser z cukrem.\n 2. Dodaj jajka i masło.\n 3. Dodaj mąkę i proszek do pieczenia.\n 4. Wymieszaj.\n 5. Wstaw do piekarnika na 180 stopni na 60 minut.", 60, 8);
-        recipes[2] = new RecipeObject("Szarlotka", "jabłka 500g, mąka 300g, cukier 200g, masło 200g, jajka 100g, proszek do pieczenia 5g, cynamon 5g, sól 5g", " 1. Wymieszaj mąkę z proszkiem do pieczenia.\n 2. Dodaj masło i jajka.\n 3. Wymieszaj.\n 4. Dodaj pokrojone jabłka i cynamon.\n 5. Wstaw do piekarnika na 180 stopni na 50 minut.", 50, 10);
-        recipes[3] = new RecipeObject("Makowiec", "mak 200g, mąka 300g, cukier 150g, jajka 100g, masło 100g, proszek do pieczenia 5g, mleko 100ml, sól 5g", " 1. Wymieszaj mąkę z proszkiem do pieczenia.\n 2. Dodaj masło, jajka i mleko.\n 3. Wymieszaj.\n 4. Dodaj mak i cukier.\n 5. Wstaw do piekarnika na 180 stopni na 60 minut.", 60, 10);
-        recipes[4] = new RecipeObject("Brownie", "czekolada 200g, masło 100g, cukier 150g, jajka 100g, mąka 50g, proszek do pieczenia 5g, sól 5g, orzechy 50g", " 1. Roztop czekoladę z masłem.\n 2. Dodaj cukier i jajka.\n 3. Dodaj mąkę i proszek do pieczenia.\n 4. Wymieszaj.\n 5. Dodaj orzechy.\n 6. Wstaw do piekarnika na 180 stopni na 30 minut.", 30, 8);
-        recipes[5] = new RecipeObject("Tiramisu", "serek mascarpone 500g, cukier 100g, jajka 100g, kawa 200ml, biszkopty 200g, kakao 10g, likier 50ml, sól 5g", " 1. Ubij jajka z cukrem.\n 2. Dodaj serek mascarpone.\n 3. Namocz biszkopty w kawie i likierze.\n 4. Układaj warstwami biszkopty i krem.\n 5. Posyp kakao.\n 6. Wstaw do lodówki na 4 godziny.", 240, 6);
+        recipes[0] = new RecipeObject("Ciasto marchewkowe", "marchewki 100g, mąka 100g, cukier 50g, jajka 100g, olej 10g, proszek do pieczenia 5g, cynamon 5g, sól 5g", " 1. Wymieszaj suche składniki: mąkę, cukier, proszek do pieczenia, cynamon i sól.\n 2. Dodaj mokre składniki: jajka i olej.\n 3. Dodaj starte marchewki i dokładnie wymieszaj.\n 4. Przełóż ciasto do formy.\n 5. Wstaw do piekarnika na 180 stopni na 45 minut.\n 6. Po upieczeniu, ostudź przed podaniem.", 60, 12, "łatwy");
+        recipes[1] = new RecipeObject("Sernik", "ser 500g, cukier 200g, jajka 100g, masło 100g, mąka 50g, proszek do pieczenia 5g, wanilia 5g, sól 5g", " 1. Wymieszaj ser z cukrem i wanilią.\n 2. Dodaj jajka i roztopione masło, dokładnie wymieszaj.\n 3. Dodaj mąkę, proszek do pieczenia i sól, wymieszaj do uzyskania jednolitej masy.\n 4. Przełóż masę serową do formy.\n 5. Wstaw do piekarnika na 180 stopni na 60 minut.\n 6. Po upieczeniu, ostudź przed podaniem.", 90, 8, "średni");
+        recipes[2] = new RecipeObject("Szarlotka", "jabłka 500g, mąka 300g, cukier 200g, masło 200g, jajka 100g, proszek do pieczenia 5g, cynamon 5g, sól 5g", " 1. Wymieszaj mąkę z proszkiem do pieczenia, cynamonem i solą.\n 2. Dodaj masło i jajka, wymieszaj do uzyskania jednolitej masy.\n 3. Dodaj pokrojone jabłka i dokładnie wymieszaj.\n 4. Przełóż ciasto do formy.\n 5. Wstaw do piekarnika na 180 stopni na 50 minut.\n 6. Po upieczeniu, ostudź przed podaniem.", 70, 10, "średni");
+        recipes[3] = new RecipeObject("Makowiec", "mak 200g, mąka 300g, cukier 150g, jajka 100g, masło 100g, proszek do pieczenia 5g, mleko 100g, sól 5g", " 1. Wymieszaj mąkę z proszkiem do pieczenia i solą.\n 2. Dodaj roztopione masło, jajka i mleko, dokładnie wymieszaj.\n 3. Dodaj mak i cukier, wymieszaj do uzyskania jednolitej masy.\n 4. Przełóż ciasto do formy.\n 5. Wstaw do piekarnika na 180 stopni na 60 minut.\n 6. Po upieczeniu, ostudź przed podaniem.", 90, 10, "łatwy");
+        recipes[4] = new RecipeObject("Brownie", "czekolada 200g, masło 100g, cukier 150g, jajka 100g, mąka 50g, proszek do pieczenia 5g, sól 5g, orzechy 50g", " 1. Roztop czekoladę z masłem.\n 2. Dodaj cukier i jajka, dokładnie wymieszaj.\n 3. Dodaj mąkę, proszek do pieczenia i sól, wymieszaj do uzyskania jednolitej masy.\n 4. Dodaj posiekane orzechy i delikatnie wymieszaj.\n 5. Przełóż ciasto do formy.\n 6. Wstaw do piekarnika na 180 stopni na 30 minut.\n 7. Po upieczeniu, ostudź przed podaniem.", 50, 8, "trudny");
+        recipes[5] = new RecipeObject("Tiramisu", "serek mascarpone 500g, cukier 100g, jajka 100g, kawa 200g, biszkopty 200g, kakao 10g, likier 50g, sól 5g", " 1. Ubij jajka z cukrem na puszystą masę.\n 2. Dodaj serek mascarpone i delikatnie wymieszaj.\n 3. Namocz biszkopty w kawie i likierze.\n 4. Układaj warstwami biszkopty i krem mascarpone.\n 5. Posyp wierzch kakao.\n 6. Wstaw do lodówki na 4 godziny przed podaniem.", 300, 6, "trudny");
     }
 
-    // FXML variables for UI elements
     @FXML
     private VBox boxForProduct;
     @FXML
@@ -69,36 +68,37 @@ public class PrimaryController {
     @FXML
     private Label actualRecipe;
     @FXML
+    private Label portions;
+    @FXML 
+    private Label difficulty;
+    @FXML
     private VBox recipeListBox;
 
-    // Method to switch to the primary view
     @FXML
     public void switchToPrimary() throws IOException {
         App.setRoot("primary");
     }
 
-    // Method to switch to the pantry view
+
     @FXML
     public void switchToSpizarnia() throws IOException {
         System.out.println("xd");
         App.setRoot("spizarnia");
     }
 
-    // Method to switch to the secondary view
+
     @FXML
     public void switchToSecondary() throws IOException {
         System.out.println("xd");
         App.setRoot("secondary");
     }
 
-    // Method to switch to the recipe view
     @FXML
     public void switchToRecipe() throws IOException {
         System.out.println("xd");
         App.setRoot("recipe");
     }
 
-    // Method to initialize the controller
     @FXML
     public void initialize() {
         if (boxForProduct != null) {
@@ -122,7 +122,6 @@ public class PrimaryController {
         }
     }
 
-    // Method to switch to the recipe view when a recipe button is clicked
     @FXML
     private void switchToRecipe(ActionEvent event) throws IOException {
         Button clickedButton = (Button) event.getSource();
@@ -131,7 +130,6 @@ public class PrimaryController {
         App.setRoot("recipe");
     }
 
-    // Method to initialize the selected recipe details
     private void initializeRecipe() {
         firstIngredient.setText(pickedRecipe.getIngredient(0));
         secondIngredient.setText(pickedRecipe.getIngredient(1));
@@ -144,9 +142,10 @@ public class PrimaryController {
         time.setText(Integer.toString(pickedRecipe.getPreparationTime()) + " minut");
         whatRecipe.setText(pickedRecipe.getName());
         actualRecipe.setText(pickedRecipe.getInstructions());
+        portions.setText(Integer.toString(pickedRecipe.getServings()));
+        difficulty.setText(pickedRecipe.getDiff());
     }
 
-    // Method to initialize the product list from the database
     private void fastInit() {
         for (int i = 0; i < Database.getAllProductsMatrix().length; i++) {
             String productName = Database.getAllProductsMatrix()[i][1];
@@ -155,7 +154,6 @@ public class PrimaryController {
         }
     }
 
-    // Method to initialize a product from the database
     private void initializeFromDatabase(String dataProductName, String dataProductAmount) {
         HBox productBox = new HBox(8);
         productBox.setAlignment(Pos.CENTER_LEFT);
@@ -192,7 +190,6 @@ public class PrimaryController {
         boxForProduct.getChildren().add(productBox);
     }
 
-    // Method to add a new product to the list and database
     @FXML
     private void add() {
         Database.createTable();
@@ -246,7 +243,6 @@ public class PrimaryController {
         productAmount.clear();
     }
 
-    // Method to initialize the pantry product list from the database
     @FXML
     private void fastInit2() {
         for (int i = 0; i < Pantry.getAllProductsMatrix2().length; i++) {
@@ -257,7 +253,6 @@ public class PrimaryController {
         }
     }
 
-    // Method to initialize a pantry product from the database
     @FXML
     private void initializeFromDatabase2(String dataProductName, String dataProductAmount) {
         HBox productBoxPandry = new HBox(8);
@@ -271,14 +266,13 @@ public class PrimaryController {
 
         Label amountLabel = new Label(dataProductAmount + "g");
         amountLabel.setFont(new Font("Arial", 24));
-        amountLabel.setPrefWidth(200);
+        amountLabel.setPrefWidth(270);
         amountLabel.setAlignment(Pos.CENTER);
 
         productBoxPandry.getChildren().addAll(productLabelPandry, amountLabel);
         boxForProductPantry.getChildren().add(productBoxPandry);
     }
 
-    // Method to display the list of recipes
     @FXML
     public void displayRecipes() {
         recipeListBox.getChildren().clear();

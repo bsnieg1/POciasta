@@ -6,17 +6,19 @@ public class RecipeObject {
     private String instructions;
     private int preparationTime;
     private int servings;
+    private String difficulty;
 
-    // Constructor
-    public RecipeObject(String name, String ingredients, String instructions, int preparationTime, int servings) {
+
+    public RecipeObject(String name, String ingredients, String instructions, int preparationTime, int servings, String difficulty) {
         this.name = name;
         this.ingredients = ingredients;
         this.instructions = instructions;
         this.preparationTime = preparationTime;
         this.servings = servings;
+        this.difficulty = difficulty;
     }
 
-    // Getter and Setter for name
+   
     public String getName() {
         return name;
     }
@@ -25,7 +27,7 @@ public class RecipeObject {
         this.name = name;
     }
 
-    // Getter and Setter for ingredients
+
     public String[] getIngredients() {
         return ingredients.split(",");
     }
@@ -34,7 +36,7 @@ public class RecipeObject {
         this.ingredients = String.join(",", ingredients);
     }
 
-    // Method to get a single ingredient by index
+    
     public String getIngredient(int index) {
         String[] ingredientsArray = getIngredients();
         if (index >= 0 && index < ingredientsArray.length) {
@@ -44,7 +46,7 @@ public class RecipeObject {
         }
     }
 
-    // Getter and Setter for instructions
+  
     public String getInstructions() {
         return instructions;
     }
@@ -53,7 +55,7 @@ public class RecipeObject {
         this.instructions = instructions;
     }
 
-    // Getter and Setter for preparationTime
+
     public int getPreparationTime() {
         return preparationTime;
     }
@@ -62,12 +64,19 @@ public class RecipeObject {
         this.preparationTime = preparationTime;
     }
 
-    // Getter and Setter for servings
+
     public int getServings() {
         return servings;
     }
 
     public void setServings(int servings) {
         this.servings = servings;
+    }
+    public String getDiff() {
+        return difficulty;
+    }
+
+    public void setDiff(String difficulty) {
+        this.difficulty = difficulty;
     }
 }

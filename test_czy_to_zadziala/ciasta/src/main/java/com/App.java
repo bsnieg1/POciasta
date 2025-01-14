@@ -1,13 +1,14 @@
 package com;
 
+import java.io.IOException;
+
+import com.model.RecipeObject;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.stage.Stage;
-import java.io.IOException;
-import com.model.RecipeObject; // Add this line
-import com.controller.PrimaryController;
+import javafx.stage.Stage; 
 
 public class App extends Application {
 
@@ -30,7 +31,6 @@ public class App extends Application {
         stage.setScene(scene);
         stage.show();
 
-        //Display the list of recipes
     }
 
     public static void setRoot(String fxml) throws IOException {
