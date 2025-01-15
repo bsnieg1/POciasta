@@ -15,6 +15,11 @@ public class DatabaseTest {
         Database.clearDatabase();
     }
 
+    @AfterEach
+    public void tearDown() {
+        Database.clearDatabase();
+    }
+
     @Test
     public void testConnect() {
         Connection conn = Database.connect();

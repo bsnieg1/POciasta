@@ -39,36 +39,32 @@
             <Pane fx:id="requirment" layoutX="56.0" layoutY="78.0" prefHeight="100.0" prefWidth="570.0">
                <children>
                   <Label alignment="CENTER" layoutX="171.0" layoutY="-1.0" prefHeight="31.0" prefWidth="220.0" styleClass="special-label" text="Potrzebne Składniki:" />
-                  <Label fx:id="firstIngredient" layoutX="10.0" layoutY="31.0" prefHeight="31.0" prefWidth="140.0" styleClass="special-label" text="1" />
-                  <Label fx:id="secondIngredient" layoutX="150.0" layoutY="26.0" prefHeight="41.0" prefWidth="140.0" styleClass="special-label" text="2" />                 
-                  <Label fx:id="thirdIngredient" layoutX="290.0" layoutY="31.0" prefHeight="31.0" prefWidth="140.0" styleClass="special-label" text="3" />
-                  <Label fx:id="fourthIngredient" layoutX="430.0" layoutY="31.0" prefHeight="31.0" prefWidth="140.0" styleClass="special-label" text="4" />
-                  <Label fx:id="fifthIngredient" layoutX="10.0" layoutY="62.0" prefHeight="31.0" prefWidth="140.0" styleClass="special-label" text="5" />
-                  <Label fx:id="sixthIngredient" layoutX="150.0" layoutY="62.0" prefHeight="31.0" prefWidth="140.0" styleClass="special-label" text="6" />
-                  <Label fx:id="seventhIngredient" layoutX="290.0" layoutY="62.0" prefHeight="31.0" prefWidth="140.0" styleClass="special-label" text="7" />
-                  <Label fx:id="eighthIngredient" layoutX="430.0" layoutY="62.0" prefHeight="31.0" prefWidth="140.0" styleClass="special-label" text="8" />
-                  
-
-                  
-                  
+                  <Label fx:id="firstIngredient" layoutX="10.0" layoutY="31.0" prefHeight="31.0" prefWidth="160.0" styleClass="special-label" text="1" />
+                  <Label fx:id="secondIngredient" layoutX="170.0" layoutY="26.0" prefHeight="41.0" prefWidth="160.0" styleClass="special-label" text="2" />
+                  <Label fx:id="thirdIngredient" layoutX="350.0" layoutY="31.0" prefHeight="31.0" prefWidth="160.0" styleClass="special-label" text="3" />
+                  <Label fx:id="fourthIngredient" layoutX="490.0" layoutY="31.0" prefHeight="31.0" prefWidth="160.0" styleClass="special-label" text="4" />
+                  <Label fx:id="fifthIngredient" layoutX="10.0" layoutY="62.0" prefHeight="31.0" prefWidth="160.0" styleClass="special-label" text="5" />
+                  <Label fx:id="sixthIngredient" layoutX="170.0" layoutY="62.0" prefHeight="31.0" prefWidth="160.0" styleClass="special-label" text="6" />
+                  <Label fx:id="seventhIngredient" layoutX="350.0" layoutY="62.0" prefHeight="31.0" prefWidth="160.0" styleClass="special-label" text="7" />
+                  <Label fx:id="eighthIngredient" layoutX="490.0" layoutY="62.0" prefHeight="31.0" prefWidth="160.0" styleClass="special-label" text="8" />
                </children>
             </Pane>
             <Pane fx:id="requirment" layoutX="56.0" layoutY="188.0" prefHeight="64.0" prefWidth="150.0">
                <children>
                   <Label fx:id="time" alignment="CENTER" layoutX="45.0" layoutY="24.0" prefHeight="17.0" prefWidth="60.0" styleClass="special-label" text="Time" />
-                  <Label alignment="CENTER" layoutX="29.0" layoutY="6.0" prefHeight="17.0" prefWidth="92.0" styleClass="special-label" text="Czas wykonania:" />
-               </children>
-            </Pane>
-            <Pane fx:id="requirment" layoutX="476.0" layoutY="188.0" prefHeight="64.0" prefWidth="150.0">
-               <children>
-                  <Label layoutX="33.0" layoutY="6.0" styleClass="special-label" text="Poziom trudności" />
-                  <Label fx:id="difficulty" alignment="CENTER" layoutX="54.0" layoutY="24.0" prefHeight="17.0" prefWidth="51.0" styleClass="special-label" text="Diff" />
+                  <Label alignment="CENTER" layoutX="10.0" layoutY="6.0" prefHeight="17.0" prefWidth="130.0" styleClass="special-label" text="Czas wykonania:" />
                </children>
             </Pane>
             <Pane fx:id="requirment" layoutX="266.0" layoutY="188.0" prefHeight="64.0" prefWidth="150.0">
                <children>
                   <Label alignment="CENTER" layoutX="29.0" layoutY="6.0" prefHeight="17.0" prefWidth="92.0" styleClass="special-label" text="Liczba porcji:" />
                   <Label fx:id="portions" alignment="CENTER" layoutX="50.0" layoutY="24.0" prefHeight="17.0" prefWidth="51.0" styleClass="special-label" text="Portions" />
+               </children>
+            </Pane>
+            <Pane fx:id="requirment" layoutX="476.0" layoutY="188.0" prefHeight="64.0" prefWidth="150.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="15.0" layoutY="6.0" prefHeight="17.0" prefWidth="120.0" styleClass="special-label" text="Poziom trudności" />
+                  <Label fx:id="difficulty" alignment="CENTER" layoutX="54.0" layoutY="24.0" prefHeight="17.0" prefWidth="51.0" styleClass="special-label" text="Diff" />
                </children>
             </Pane>
             <Button fx:id="makeCake" layoutX="226.0" layoutY="554.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="220.0" text="Button" onAction="#makeCake"/>

@@ -15,6 +15,11 @@ public class PantryTest {
         Pantry.clearDatabase2();
     }
 
+    @AfterEach
+    public void tearDown() {
+        Pantry.clearDatabase2();
+    }
+
     @Test
     public void testConnect() {
         Connection conn = Pantry.connect();

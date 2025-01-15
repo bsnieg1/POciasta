@@ -352,5 +352,23 @@ public class PrimaryController {
             recipeListBox.getChildren().add(recipeButton);
         }
     }
+
+    @FXML
+    private void clearPantryDatabase() {
+        Alert alert = new Alert(AlertType.CONFIRMATION, "Czy na pewno chcesz wyczyścić spiżarnię?", ButtonType.YES, ButtonType.NO);
+        alert.setTitle("Potwierdzenie");
+        alert.setHeaderText(null);
+        alert.showAndWait();
+
+        if (alert.getResult() == ButtonType.YES) {
+            Pantry.clearDatabase2();
+            boxForProductPantry.getChildren().clear(); // Clear the view
+            fastInit2(); // Reinitialize the view
+            Alert infoAlert = new Alert(AlertType.INFORMATION, "Spiżarnia została wyczyszczona.");
+            infoAlert.setTitle("Informacja");
+            infoAlert.setHeaderText(null);
+            infoAlert.showAndWait();
+        }
+    }
     
 }

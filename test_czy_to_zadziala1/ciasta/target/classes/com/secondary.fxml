@@ -34,17 +34,17 @@
                <Pane prefHeight="63.0" prefWidth="668.0">
                   <children>
                      <!-- TextFields for new product input -->
-                     <TextField fx:id="newProduct" layoutX="14.0" layoutY="5.0" prefHeight="43.0" prefWidth="332.0" promptText="Twój produkt">
+                     <TextField fx:id="newProduct" layoutX="14.0" layoutY="5.0" prefHeight="43.0" prefWidth="300.0" promptText="Twój produkt">
                         <font>
                            <Font size="24.0" />
                         </font>
                      </TextField>
-                     <TextField fx:id="productAmount" layoutX="360.0" layoutY="4.0" prefHeight="45.0" prefWidth="200.0" promptText="Ilość w gramach">
+                     <TextField fx:id="productAmount" layoutX="320.0" layoutY="4.0" prefHeight="45.0" prefWidth="200.0" promptText="Ilość (g)">
                         <font>
                            <Font size="24.0" />
                         </font>
                      </TextField>
-                     <Button fx:id="acceptButton" layoutX="567.0" layoutY="4.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="96.0" text="Dodaj" onAction="#add">
+                     <Button fx:id="acceptButton" layoutX="530.0" layoutY="4.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="120.0" text="Dodaj" onAction="#add">
                         <font>
                            <Font size="24.0" />
                         </font>
