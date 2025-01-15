@@ -186,4 +186,19 @@ public class Pantry {
             System.out.println("Error while subtracting the product amount in the second database: " + e.getMessage());
         }
     }
+
+    public static int getCurrentAmount(String productName) {
+        String sql = "SELECT product_amount FROM products WHERE product_name = ?";
+        try (Connection conn = connect();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, productName);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                return rs.getInt("product_amount");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error retrieving current amount: " + e.getMessage());
+        }
+        return 0;
+    }
 }

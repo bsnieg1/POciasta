@@ -12,12 +12,18 @@ import com.model.RecipeObject;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonBar;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
+
+import java.util.Optional;
 
 public class PrimaryController {
 
@@ -140,16 +146,56 @@ public class PrimaryController {
 
 
         } else {
-            makeCake.setText("Nie masz wystarczających składników");
-            makeCake.setDisable(true);
+            makeCake.setText("Czy mam składniki?");
+            makeCake.setDisable(false);
         }
     }
     @FXML
     private void makeCake(){
+        StringBuilder missing = new StringBuilder();
         for(String ingredient : pickedRecipe.getIngredients()){
             String removeIngredient = ingredient.substring(0, ingredient.lastIndexOf(" "));
-            int removeValue = Integer.parseInt(ingredient.substring(ingredient.lastIndexOf(" ")+1,ingredient.length()-1));
-            Pantry.subtractProductAmount(removeIngredient, removeValue);
+            int removeValue = Integer.parseInt(ingredient.substring(ingredient.lastIndexOf(" ")+1, ingredient.length()-1));
+            int currentAmount = Pantry.getCurrentAmount(removeIngredient); // Implement getCurrentAmount in Pantry if needed
+
+            if (currentAmount < removeValue) {
+                missing.append(removeIngredient)
+                       .append(" (potrzebne: ").append(removeValue)
+                       .append(", dostępne: ").append(currentAmount).append(")\n");
+            }
+        }
+        if (missing.length() > 0) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Brakuje składników");
+            alert.setHeaderText(null);
+            alert.setContentText("Nie masz wystarczających składników:\n" + missing.toString());
+            alert.showAndWait();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Wykonanie przepisu");
+            alert.setHeaderText(null);
+            alert.setContentText("Czy wykonałeś przepis?");
+            ButtonType takButton = new ButtonType("Tak", ButtonBar.ButtonData.OK_DONE);
+            ButtonType nieButton = new ButtonType("Nie", ButtonBar.ButtonData.CANCEL_CLOSE);
+            alert.getButtonTypes().setAll(takButton, nieButton);
+
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.isPresent() && result.get() == takButton) {
+                StringBuilder leftover = new StringBuilder();
+                for(String ingredient : pickedRecipe.getIngredients()){
+                    String removeIngredient = ingredient.substring(0, ingredient.lastIndexOf(" "));
+                    int removeValue = Integer.parseInt(ingredient.substring(ingredient.lastIndexOf(" ")+1, ingredient.length()-1));
+                    Pantry.subtractProductAmount(removeIngredient, removeValue);
+                    leftover.append(removeIngredient)
+                            .append(" - ")
+                            .append(Pantry.getCurrentAmount(removeIngredient)).append("g\n");
+                }
+                Alert leftoverAlert = new Alert(Alert.AlertType.INFORMATION);
+                leftoverAlert.setTitle("Stan składników");
+                leftoverAlert.setHeaderText(null);
+                leftoverAlert.setContentText("Po wykonaniu przepisu zostało ci:\n" + leftover.toString());
+                leftoverAlert.showAndWait();
+            }
         }
     }
     private void fastInit() {
@@ -209,7 +255,18 @@ public class PrimaryController {
         newProductLabel.setPrefWidth(332);
         newProductLabel.setAlignment(Pos.CENTER);
 
-        Label productAmountLabel = new Label(productAmount.getText() + "g");
+        String productAmountText = productAmount.getText();
+        if (!productAmountText.matches("\\d+") || Integer.parseInt(productAmountText) <= 0) {
+            System.out.println("Invalid product amount: " + productAmountText);
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Invalid Input");
+            alert.setHeaderText(null);
+            alert.setContentText("Invalid product amount: " + productAmountText);
+            alert.showAndWait();
+            return;
+        }
+
+        Label productAmountLabel = new Label(productAmountText + "g");
         productAmountLabel.setFont(new Font("Arial", 24));
         productAmountLabel.setPrefWidth(200);
         productAmountLabel.setAlignment(Pos.CENTER);
