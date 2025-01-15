@@ -12,7 +12,10 @@ import com.model.RecipeObject;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
@@ -209,6 +212,18 @@ public class PrimaryController {
         newProductLabel.setPrefWidth(332);
         newProductLabel.setAlignment(Pos.CENTER);
 
+
+        String productAmountText = productAmount.getText();
+        if (!productAmountText.matches("\\d+") || Integer.parseInt(productAmountText) <= 0) {
+            System.out.println("Invalid product amount: " + productAmountText);
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Invalid Input");
+            alert.setHeaderText(null);
+            alert.setContentText("Invalid product amount: " + productAmountText);
+            alert.showAndWait();
+            return;
+        }
+        
         Label productAmountLabel = new Label(productAmount.getText() + "g");
         productAmountLabel.setFont(new Font("Arial", 24));
         productAmountLabel.setPrefWidth(200);
@@ -295,5 +310,23 @@ public class PrimaryController {
             recipeListBox.getChildren().add(recipeButton);
         }
     }
+
     
+    @FXML
+    private void clearPantryDatabase() {
+        Alert alert = new Alert(AlertType.CONFIRMATION, "Czy na pewno chcesz wyczyścić spiżarnię?", ButtonType.YES, ButtonType.NO);
+        alert.setTitle("Potwierdzenie");
+        alert.setHeaderText(null);
+        alert.showAndWait();
+
+        if (alert.getResult() == ButtonType.YES) {
+            Pantry.clearDatabase2();
+            boxForProductPantry.getChildren().clear(); // Clear the view
+            fastInit2(); // Reinitialize the view
+            Alert infoAlert = new Alert(AlertType.INFORMATION, "Spiżarnia została wyczyszczona.");
+            infoAlert.setTitle("Informacja");
+            infoAlert.setHeaderText(null);
+            infoAlert.showAndWait();
+        }
+    }
 }
