@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controller.PrimaryController">
+   <children>
+      <!-- Navigation Buttons -->
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" text="PRZEPISY">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button layoutX="240.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToSecondary" prefHeight="100.0" prefWidth="220.0" text="LISTA&#10;ZAKUPÓW">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button layoutX="486.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToSpizarnia" prefHeight="100.0" prefWidth="200.0" text="SPIŻARNIA">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      
+      <!-- Recipe List -->
+      <VBox layoutX="10.0" layoutY="122.0" prefHeight="677.0" prefWidth="688.0">
+         <children>
+            <Pane prefHeight="100.0" prefWidth="680.0">
+               <children>
+                  <Label contentDisplay="RIGHT" prefHeight="100.0" prefWidth="680.0" text=" Brownie">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+                  <Button alignment="CENTER" layoutX="503.0" layoutY="28.0" mnemonicParsing="false" onAction="#switchToRecipe" prefHeight="45.0" prefWidth="155.0" text="Przejdź do przepisu" userData="4" />
+               </children>
+            </Pane>
+            <Pane prefHeight="100.0" prefWidth="672.0">
+               <children>
+                  <Label contentDisplay="RIGHT" prefHeight="100.0" prefWidth="680.0" text=" Szarlotka">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+                  <Button alignment="CENTER" layoutX="503.0" layoutY="28.0" mnemonicParsing="false" onAction="#switchToRecipe" prefHeight="45.0" prefWidth="155.0" text="Przejdź do przepisu" userData="2" />
+               </children>
+            </Pane>
+            <Pane prefHeight="100.0" prefWidth="672.0">
+               <children>
+                  <!-- Recipe Labels -->
+                  <Label contentDisplay="RIGHT" prefHeight="100.0" prefWidth="680.0" text=" Ciasto marchewkowe">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+                  <Button alignment="CENTER" layoutX="503.0" layoutY="28.0" mnemonicParsing="false" onAction="#switchToRecipe" prefHeight="45.0" prefWidth="155.0" text="Przejdź do przepisu" userData="0" />
+               </children>
+            </Pane>
+            <Pane prefHeight="100.0" prefWidth="672.0">
+               <children>
+                  <Label contentDisplay="RIGHT" prefHeight="100.0" prefWidth="680.0" text=" Sernik">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+                  <Button alignment="CENTER" layoutX="513.0" layoutY="28.0" mnemonicParsing="false" onAction="#switchToRecipe" prefHeight="45.0" prefWidth="145.0" text="Przejdź do przepisu" userData="1" />
+               </children>
+            </Pane>
+            <Pane prefHeight="100.0" prefWidth="672.0">
+               <children>
+                  <Label contentDisplay="RIGHT" prefHeight="100.0" prefWidth="680.0" text=" Makowiec">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+                  <Button alignment="CENTER" layoutX="513.0" layoutY="28.0" mnemonicParsing="false" onAction="#switchToRecipe" prefHeight="45.0" prefWidth="145.0" text="Przejdź do przepisu2" userData="3" />
+               </children>
+            </Pane>
+            <Pane prefHeight="100.0" prefWidth="672.0">
+               <children>
+                  <Label contentDisplay="RIGHT" prefHeight="100.0" prefWidth="680.0" text=" Tiramisu">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+                  <Button alignment="CENTER" layoutX="513.0" layoutY="28.0" mnemonicParsing="false" onAction="#switchToRecipe" prefHeight="45.0" prefWidth="145.0" text="Przejdź do przepisu" userData="5" />
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
