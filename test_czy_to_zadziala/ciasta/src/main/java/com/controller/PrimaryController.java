@@ -9,6 +9,8 @@ import com.database.Database;
 import com.database.Pantry;
 import com.model.RecipeObject;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
@@ -21,8 +23,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.util.Duration;
 
 public class PrimaryController {
@@ -106,6 +106,8 @@ public class PrimaryController {
     @FXML
     public void switchToRecipe() throws IOException {
         App.setRoot("recipe");
+        
+        
     }
 
     @FXML
