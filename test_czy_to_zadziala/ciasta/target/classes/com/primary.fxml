@@ -15,7 +15,7 @@
             <Font size="24.0" />
          </font>
       </Button>
-      <Button layoutX="240.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToSecondary" prefHeight="100.0" prefWidth="220.0" text="LISTA ZAKUPÓW">
+      <Button layoutX="240.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToSecondary" prefHeight="100.0" prefWidth="220.0" text="LISTA ZAKUPÓW" textAlignment="CENTER" wrapText="true">
          <font>
             <Font size="24.0" />
          </font>
@@ -77,7 +77,7 @@
                         <Font size="40.0" />
                      </font>
                   </Label>
-                  <Button alignment="CENTER" layoutX="513.0" layoutY="28.0" mnemonicParsing="false" onAction="#switchToRecipe" prefHeight="45.0" prefWidth="145.0" text="Przejdź do przepisu2" userData="3" />
+                  <Button alignment="CENTER" layoutX="503.0" layoutY="28.0" mnemonicParsing="false" onAction="#switchToRecipe" prefHeight="45.0" prefWidth="155.0" text="Przejdź do przepisu" userData="3" />
                </children>
             </Pane>
             <Pane prefHeight="100.0" prefWidth="672.0">

@@ -21,6 +21,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.util.Duration;
 
 public class PrimaryController {
 
@@ -79,6 +82,11 @@ public class PrimaryController {
     @FXML
     private Button makeCake;
     @FXML
+    private Label timerLabel;
+    private Timeline timeline;
+    private int timeInSeconds = 0;
+
+    @FXML
     public void switchToPrimary() throws IOException {
         App.setRoot("primary");
     }
@@ -104,7 +112,6 @@ public class PrimaryController {
     public void initialize() {
         if (boxForProduct != null) {
             fastInit();
-        } else {
         }
         if (boxForProductPantry != null) {
             fastInit2();
@@ -112,6 +119,14 @@ public class PrimaryController {
         if (firstIngredient != null) {
             pickedRecipe = App.getPickedRecipe();
             initializeRecipe();
+        }
+        if (timerLabel != null) {
+            updateTimerLabel();
+            if (App.getTimeline() == null) {
+                startTimer();
+            } else {
+                App.getTimeline().play();
+            }
         }
     }
 
@@ -327,6 +342,52 @@ public class PrimaryController {
             infoAlert.setTitle("Informacja");
             infoAlert.setHeaderText(null);
             infoAlert.showAndWait();
+        }
+    }
+
+    @FXML
+    private void addFiveMinutes() {
+        App.setTimeInSeconds(App.getTimeInSeconds() + 300);
+        updateTimerLabel();
+    }
+
+    @FXML
+    private void subtractFiveMinutes() {
+        App.setTimeInSeconds(Math.max(0, App.getTimeInSeconds() - 300));
+        updateTimerLabel();
+    }
+
+    @FXML
+    private void startTimer() {
+        if (App.getTimeline() != null) {
+            App.getTimeline().stop();
+        }
+        Timeline newTimeline = new Timeline(new KeyFrame(Duration.seconds(1), e -> {
+            if (App.getTimeInSeconds() > 0) {
+                App.setTimeInSeconds(App.getTimeInSeconds() - 1);
+                updateTimerLabel();
+            } else {
+                App.getTimeline().stop();
+            }
+        }));
+        newTimeline.setCycleCount(Timeline.INDEFINITE);
+        App.setTimeline(newTimeline);
+        newTimeline.play();
+        updateTimerLabel();
+    }
+
+    @FXML
+    private void stopTimer() {
+        if (App.getTimeline() != null) {
+            App.getTimeline().stop();
+        }
+    }
+
+    private void updateTimerLabel() {
+        if (timerLabel != null) {
+            int minutes = App.getTimeInSeconds() / 60;
+            int seconds = App.getTimeInSeconds() % 60;
+            timerLabel.setText(String.format("%02d:%02d", minutes, seconds));
         }
     }
 }

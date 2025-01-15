@@ -13,7 +13,7 @@
             <Font size="24.0" />
          </font>
       </Button>
-      <Button layoutX="240.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToSecondary" prefHeight="100.0" prefWidth="220.0" text="LISTA ZAKUPÓW">
+      <Button layoutX="240.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToSecondary" prefHeight="100.0" prefWidth="220.0" text="LISTA ZAKUPÓW" textAlignment="CENTER" wrapText="true">
          <font>
             <Font size="24.0" />
          </font>
@@ -33,7 +33,7 @@
             <Label fx:id="actualRecipe" alignment="TOP_LEFT" layoutX="55.0" layoutY="318.0" prefHeight="311.0" prefWidth="570.0" styleClass="special-label" text="Bardzo długi tekst, który powinien być zawijany i zaczynać się od lewego górnego rogu.Bardzo długi tekst, który powinien być zawijany i zaczynać się od lewego górnego rogu." wrapText="true" />
             <Label alignment="CENTER" layoutX="236.0" layoutY="269.0" prefHeight="47.0" prefWidth="200.0" styleClass="special-label" text="Przepis:" textAlignment="CENTER">
                <font>
-                  <Font size="20.0" />
+                  <Font size="24.0" />
                </font>
             </Label>
             <Pane fx:id="requirment" layoutX="56.0" layoutY="78.0" prefHeight="100.0" prefWidth="570.0">
@@ -47,21 +47,17 @@
                   <Label fx:id="sixthIngredient" layoutX="150.0" layoutY="62.0" prefHeight="31.0" prefWidth="140.0" styleClass="special-label" text="6" />
                   <Label fx:id="seventhIngredient" layoutX="290.0" layoutY="62.0" prefHeight="31.0" prefWidth="140.0" styleClass="special-label" text="7" />
                   <Label fx:id="eighthIngredient" layoutX="430.0" layoutY="62.0" prefHeight="31.0" prefWidth="140.0" styleClass="special-label" text="8" />
-                  
-
-                  
-                  
                </children>
             </Pane>
             <Pane fx:id="requirment" layoutX="56.0" layoutY="188.0" prefHeight="64.0" prefWidth="150.0">
                <children>
-                  <Label fx:id="time" alignment="CENTER" layoutX="45.0" layoutY="24.0" prefHeight="17.0" prefWidth="60.0" styleClass="special-label" text="Time" />
-                  <Label alignment="CENTER" layoutX="29.0" layoutY="6.0" prefHeight="17.0" prefWidth="92.0" styleClass="special-label" text="Czas wykonania:" />
+                  <Label fx:id="time" alignment="CENTER" layoutX="0.0" layoutY="24.0" prefHeight="17.0" prefWidth="150.0" styleClass="special-label" text="Time" />
+                  <Label alignment="CENTER" layoutX="0.0" layoutY="6.0" prefHeight="17.0" prefWidth="150.0" styleClass="special-label" text="Czas wykonania:" />
                </children>
             </Pane>
             <Pane fx:id="requirment" layoutX="476.0" layoutY="188.0" prefHeight="64.0" prefWidth="150.0">
                <children>
-                  <Label layoutX="33.0" layoutY="6.0" styleClass="special-label" text="Poziom trudności" />
+                  <Label layoutX="0.0" layoutY="6.0" prefHeight="17.0" prefWidth="150.0" styleClass="special-label" text="Poziom trudności" alignment="CENTER"/>
                   <Label fx:id="difficulty" alignment="CENTER" layoutX="54.0" layoutY="24.0" prefHeight="17.0" prefWidth="51.0" styleClass="special-label" text="Diff" />
                </children>
             </Pane>
@@ -71,9 +67,13 @@
                   <Label fx:id="portions" alignment="CENTER" layoutX="50.0" layoutY="24.0" prefHeight="17.0" prefWidth="51.0" styleClass="special-label" text="Portions" />
                </children>
             </Pane>
+            <Button fx:id="startTimer" layoutX="50.0" layoutY="500.0" mnemonicParsing="false" text="Start" onAction="#startTimer" prefHeight="50.0" prefWidth="100.0"/>
+            <Button fx:id="stopTimer" layoutX="160.0" layoutY="500.0" mnemonicParsing="false" text="Stop" onAction="#stopTimer" prefHeight="50.0" prefWidth="100.0"/>
+            <Button fx:id="plusFiveMin" layoutX="380.0" layoutY="500.0" mnemonicParsing="false" text="+5min" onAction="#addFiveMinutes" prefHeight="50.0" prefWidth="100.0"/>
+            <Button fx:id="minusFiveMin" layoutX="490.0" layoutY="500.0" mnemonicParsing="false" text="-5min" onAction="#subtractFiveMinutes" prefHeight="50.0" prefWidth="100.0"/>
+            <Label fx:id="timerLabel" layoutX="270.0" layoutY="500.0" prefHeight="50.0" prefWidth="100.0" text="00:00" style="-fx-font-size: 24px;"/>
             <Button fx:id="makeCake" layoutX="226.0" layoutY="554.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="220.0" text="Button" onAction="#makeCake"/>
          </children>
       </Pane>
-      
    </children>
 </AnchorPane>
