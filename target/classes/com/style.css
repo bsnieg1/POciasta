@@ -1,0 +1,37 @@
+AnchorPane {
+    -fx-background-color: #c0957d;
+}
+.scroll-pane .viewport{
+    -fx-background-color: #c0957d;
+
+}
+.scroll-pane {
+    -fx-background-color: #c0957d;
+    -fx-border-width: 2px;
+    -fx-border-color: #3d1d08;
+}
+
+
+.button {
+    -fx-background-color: #49230a; 
+    -fx-text-fill: white; 
+    -fx-background-radius: 20px;
+}
+.button:hover {
+    -fx-background-color: #683010; 
+}
+
+
+.label {
+    -fx-border-color: #3d1d08;
+    -fx-border-width: 2px;
+}
+
+
+#requirment {
+    -fx-border-width: 2px;
+    -fx-border-color: #3d1d08;
+}
+.special-label {
+    -fx-border-width: 0px;
+}
